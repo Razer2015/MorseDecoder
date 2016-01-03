@@ -14,3 +14,12 @@ c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeD
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Credits.resources
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.exe
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.pdb
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\bin\Debug\MorseCodeDecoder.exe
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\bin\Debug\MorseCodeDecoder.pdb
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.csprojResolveAssemblyReference.cache
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Credits.resources
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Form1.resources
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Properties.Resources.resources
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.ScreenCapStart.resources
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.WebcamStart.resources
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.csproj.GenerateResource.Cache

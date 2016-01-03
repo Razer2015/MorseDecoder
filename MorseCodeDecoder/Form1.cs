@@ -347,5 +347,11 @@ namespace MorseCodeDecoder
                 System.Environment.Exit(1);
             }
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            closeVideoSource();
+            closeScreenSource();
+        }
     }
 }

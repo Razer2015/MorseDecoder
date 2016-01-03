@@ -63,7 +63,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MorseToString.cs" />
-    <Compile Include="ParallelPort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenCapStart.cs">
@@ -104,9 +103,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="References\inpout32.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\startup.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
