@@ -22,3 +22,4 @@ C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\Mor
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.ScreenCapStart.resources
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.WebcamStart.resources
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.csproj.GenerateResource.Cache
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.csprojResolveAssemblyReference.cache
