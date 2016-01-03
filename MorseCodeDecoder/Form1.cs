@@ -59,6 +59,7 @@ namespace MorseCodeDecoder
                 processes(ref image);
             }
             pBox_preview.Image = image;
+            //image.Dispose();
         }
 
         private void closeVideoSource()
@@ -84,6 +85,7 @@ namespace MorseCodeDecoder
                 processes(ref image);
             }
             pBox_preview.Image = image;
+            //image.Dispose();
         }
 
         private void closeScreenSource()
@@ -207,6 +209,7 @@ namespace MorseCodeDecoder
 
                         // create screen capture video source
                         ScreenStream = new ScreenCaptureStream(screenArea);
+                        ScreenStream.FrameInterval = 30;
                         // set NewFrame event handler
                         ScreenStream.NewFrame += new NewFrameEventHandler(Screen_NewFrame);
                         // start the video source

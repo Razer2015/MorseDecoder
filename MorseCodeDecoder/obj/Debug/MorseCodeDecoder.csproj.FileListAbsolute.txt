@@ -16,7 +16,6 @@ C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\Mor
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.pdb
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\bin\Debug\MorseCodeDecoder.exe
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\bin\Debug\MorseCodeDecoder.pdb
-C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.csprojResolveAssemblyReference.cache
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Credits.resources
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Form1.resources
 C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Properties.Resources.resources
