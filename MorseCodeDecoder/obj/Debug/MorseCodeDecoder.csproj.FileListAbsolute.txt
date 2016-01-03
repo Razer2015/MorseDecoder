@@ -1,0 +1,16 @@
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\bin\Debug\References\inpout32.dll
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\bin\Debug\MorseCodeDecoder.exe
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\bin\Debug\MorseCodeDecoder.pdb
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\bin\Debug\AForge.Video.DirectShow.dll
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\bin\Debug\AForge.Video.dll
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.csprojResolveAssemblyReference.cache
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Form1.resources
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Properties.Resources.resources
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.csproj.GenerateResource.Cache
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.exe
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.pdb
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.ScreenCapStart.resources
+c:\users\miika\documents\visual studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.WebcamStart.resources
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.Credits.resources
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.exe
+C:\Users\Miika\Documents\Visual Studio 2015\Projects\MorseCodeDecoder\Github\MorseDecoder\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.pdb
