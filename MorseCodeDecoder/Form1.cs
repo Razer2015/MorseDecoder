@@ -59,7 +59,7 @@ namespace MorseCodeDecoder
                 processes(ref image);
             }
             pBox_preview.Image = image;
-            //image.Dispose();
+            GC.Collect();
         }
 
         private void closeVideoSource()
@@ -85,7 +85,7 @@ namespace MorseCodeDecoder
                 processes(ref image);
             }
             pBox_preview.Image = image;
-            //image.Dispose();
+            GC.Collect();
         }
 
         private void closeScreenSource()
