@@ -11,12 +11,9 @@ https://github.com/Razer2015/MorseDecoder/blob/master/MorseCodeDecoder/bin/Debug
 <br>
 <br>
 
-*                                                                        *<br>
-*     Light calculator included in the zip is from s1ingular1ty2         *<br>
-*                       https://goo.gl/3NmQZ9                            *<br>
-*                                                                        *<br>
-*                                                                        *<br>
-*    Some parts of the code are taken from the Morse Code Interpreter    *<br>
-*                      which is coded by Shivam Kalra                    *<br>
-*                           http://goo.gl/UdSosl                         *<br>
-*                                                                        *<br>
+*     Light calculator included in the zip is from s1ingular1ty2<br>
+*                       https://goo.gl/3NmQZ9<br>
+<br>
+*    Some parts of the code are taken from the Morse Code Interpreter<br>
+*                      which is coded by Shivam Kalra<br>
+*                           http://goo.gl/UdSosl<br>
