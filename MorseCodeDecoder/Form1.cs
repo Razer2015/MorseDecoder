@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Diagnostics;
+using System.IO;
 
 namespace MorseCodeDecoder
 {
@@ -18,12 +19,15 @@ namespace MorseCodeDecoder
         {
             InitializeComponent();
             this.pBox_preview.Image = global::MorseCodeDecoder.Properties.Resources.startup;
+            btn_Start.Enabled = false;
             btn_Stop.Enabled = false;
+            LoadPresets();
         }
 
         /// <summary>
         /// Variables
         /// </summary>
+        private Settings settings;
         private Processing processes;
         private Point pt;
         private Stopwatch sw = new Stopwatch();
@@ -51,6 +55,7 @@ namespace MorseCodeDecoder
             line_drawed = true;
         }
 
+        #region WebCam
         private void videoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap image = (Bitmap)eventArgs.Frame.Clone();
@@ -75,8 +80,10 @@ namespace MorseCodeDecoder
                     processes = null;
                 }
             }
-        }
+        } 
+        #endregion
 
+        #region Screen
         private void Screen_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap image = (Bitmap)eventArgs.Frame.Clone();
@@ -86,6 +93,11 @@ namespace MorseCodeDecoder
             }
             pBox_preview.Image = image;
             GC.Collect();
+        }
+
+        private void PC_S_FrameInterval(int frameinterval)
+        {
+            ScreenStream.FrameInterval = frameinterval;
         }
 
         private void closeScreenSource()
@@ -101,7 +113,8 @@ namespace MorseCodeDecoder
                     processes = null;
                 }
             }
-        }
+        } 
+        #endregion
 
         /// <summary>
         /// Processing the input
@@ -215,6 +228,7 @@ namespace MorseCodeDecoder
                         // start the video source
                         ScreenStream.Start();
                         pBox_preview.SizeMode = PictureBoxSizeMode.StretchImage;
+                        btn_Start.Enabled = true;
                     }
                 }
                 else
@@ -229,6 +243,7 @@ namespace MorseCodeDecoder
                             VideoDevice.NewFrame += new NewFrameEventHandler(videoSource_NewFrame);
                             VideoDevice.Start();
                             pBox_preview.SizeMode = PictureBoxSizeMode.StretchImage;
+                            btn_Start.Enabled = true;
                         }
                     }
                 }
@@ -248,7 +263,6 @@ namespace MorseCodeDecoder
             {
                 MessageBox.Show("Please click the pictureBox again and set the place where from the morse code is captured.");
             }
-
         }
 
         private void btn_Stop_Click(object sender, EventArgs e)
@@ -271,6 +285,7 @@ namespace MorseCodeDecoder
             rTB_translated.Text = "";
         }
 
+        #region richTextBox appending
         public void Append_morse(string value)
         {
             if (InvokeRequired)
@@ -299,8 +314,10 @@ namespace MorseCodeDecoder
                 return;
             }
             rTB_translated.Text += value;
-        }
+        } 
+        #endregion
 
+        #region Morse Code To String
         private void MorseToString()
         {
             string morse = rTB_morse.Text;
@@ -329,8 +346,10 @@ namespace MorseCodeDecoder
         private void rTB_morse_TextChanged(object sender, EventArgs e)
         {
             MorseToString();
-        }
+        } 
+        #endregion
 
+        #region ToolStrips
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Credits cred = new Credits();
@@ -349,12 +368,123 @@ namespace MorseCodeDecoder
                 // Console app
                 System.Environment.Exit(1);
             }
-        }
+        } 
+        #endregion
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             closeVideoSource();
             closeScreenSource();
         }
+
+        #region Settings
+        private void LoadPresets(string file_path = "setting_presets.xml")
+        {
+            if (!File.Exists(file_path))
+            {
+                settings = new Settings();
+                cBox_presets.Items.Clear();
+                return;
+            }
+            // DeSerialize the presets xml
+            settings = XmlSerializing.DeSerialize(file_path);
+            // Read them
+            cBox_presets.Items.Clear();
+            for (int i = 0; i < settings.Presets.Length; i++)
+            {
+                cBox_presets.Items.Add(settings.Presets[i].preset_name);
+            }
+            // Select the saved index
+            if (cBox_presets.Items.Count > settings.selected_index)
+                cBox_presets.SelectedIndex = settings.selected_index;
+        }
+
+        private void cBox_presets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cBox_presets.SelectedIndex == -1 || cBox_presets.SelectedIndex >= settings.Presets.Length)
+                return;
+
+            nUD_brightness.Value = settings.Presets[cBox_presets.SelectedIndex].brightness_th;
+            nUD_dot.Value = settings.Presets[cBox_presets.SelectedIndex].dot_pause_th;
+            nUD_char.Value = settings.Presets[cBox_presets.SelectedIndex].char_pause_th;
+            nUD_word.Value = settings.Presets[cBox_presets.SelectedIndex].word_pause_th;
+            nUD_finterval.Value = settings.Presets[cBox_presets.SelectedIndex].frameinterval;
+
+            // Save
+            settings.selected_index = cBox_presets.SelectedIndex;
+            XmlSerializing.SerializeToPlain(settings);
+        }
+
+        private void btn_preset_save_Click(object sender, EventArgs e)
+        {
+            if (cBox_presets.SelectedIndex == -1 || cBox_presets.SelectedIndex >= settings.Presets.Length)
+                return;
+
+            settings.Presets[cBox_presets.SelectedIndex].brightness_th = (int)nUD_brightness.Value;
+            settings.Presets[cBox_presets.SelectedIndex].dot_pause_th = (int)nUD_dot.Value;
+            settings.Presets[cBox_presets.SelectedIndex].char_pause_th = (int)nUD_char.Value;
+            settings.Presets[cBox_presets.SelectedIndex].word_pause_th = (int)nUD_word.Value;
+            settings.Presets[cBox_presets.SelectedIndex].frameinterval = (int)nUD_finterval.Value;
+
+            // Save
+            XmlSerializing.SerializeToPlain(settings);
+        }
+
+        private void btn_preset_saveas_Click(object sender, EventArgs e)
+        {
+            Input_dialog input = new Input_dialog();
+            if (input.ShowDialog() == DialogResult.OK)
+            {
+                if(settings.Presets == null)
+                    settings.Presets = new Preset[1];
+                else
+                    Array.Resize(ref settings.Presets, settings.Presets.Length + 1);
+                settings.Presets[settings.Presets.Length - 1] = new Preset()
+                {
+                    preset_name = input.Result,
+                    brightness_th = (int)nUD_brightness.Value,
+                    dot_pause_th = (int)nUD_dot.Value,
+                    char_pause_th = (int)nUD_char.Value,
+                    word_pause_th = (int)nUD_word.Value,
+                    frameinterval = (int)nUD_finterval.Value
+                };
+
+                settings.selected_index = settings.Presets.Length - 1;
+            }
+
+            // Save
+            XmlSerializing.SerializeToPlain(settings);
+            // Reload
+            LoadPresets();
+        }
+
+        private void btn_preset_delete_Click(object sender, EventArgs e)
+        {
+            if(settings.Presets.Length == 1)
+            {
+                File.Delete("setting_presets.xml");
+                // Reload
+                LoadPresets();
+                return;
+            }
+            // Remove at currently selected index
+            settings.Presets = Global.RemoveAt(settings.Presets, cBox_presets.SelectedIndex);
+            // New index
+            if (settings.Presets.Length > 0)
+            {
+                settings.selected_index = 0;
+                // Save
+                XmlSerializing.SerializeToPlain(settings);
+                // Reload
+                LoadPresets();
+            }
+            else
+            {
+                File.Delete("setting_presets.xml");
+                // Reload
+                LoadPresets();
+            }
+        }
+        #endregion
     }
 }

@@ -74,6 +74,9 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.lLabel_xfilefin);
             this.Controls.Add(this.linkLabel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Credits";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Credits";

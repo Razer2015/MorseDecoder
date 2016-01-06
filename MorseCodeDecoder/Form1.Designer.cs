@@ -35,7 +35,6 @@
             this.rButton_WebCam = new System.Windows.Forms.RadioButton();
             this.rButton_Screen = new System.Windows.Forms.RadioButton();
             this.rTB_logging = new System.Windows.Forms.RichTextBox();
-            this.pBox_preview = new System.Windows.Forms.PictureBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,11 +56,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nUD_finterval = new System.Windows.Forms.NumericUpDown();
+            this.frameinterval = new System.Windows.Forms.Label();
+            this.cBox_presets = new System.Windows.Forms.ComboBox();
+            this.btn_preset_save = new System.Windows.Forms.Button();
+            this.btn_preset_saveas = new System.Windows.Forms.Button();
+            this.btn_preset_delete = new System.Windows.Forms.Button();
+            this.pBox_preview = new System.Windows.Forms.PictureBox();
+            this.line_1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_preview)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUD_dot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUD_brightness)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUD_finterval)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_preview)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -149,20 +157,6 @@
             this.rTB_logging.Size = new System.Drawing.Size(442, 193);
             this.rTB_logging.TabIndex = 2;
             this.rTB_logging.Text = "";
-            // 
-            // pBox_preview
-            // 
-            this.pBox_preview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBox_preview.BackColor = System.Drawing.Color.DimGray;
-            this.pBox_preview.Location = new System.Drawing.Point(5, 25);
-            this.pBox_preview.Name = "pBox_preview";
-            this.pBox_preview.Size = new System.Drawing.Size(442, 269);
-            this.pBox_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_preview.TabIndex = 1;
-            this.pBox_preview.TabStop = false;
-            this.pBox_preview.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBox_preview_MouseDown);
             // 
             // tabControl2
             // 
@@ -266,6 +260,13 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.Controls.Add(this.btn_preset_delete);
+            this.panel2.Controls.Add(this.btn_preset_saveas);
+            this.panel2.Controls.Add(this.btn_preset_save);
+            this.panel2.Controls.Add(this.cBox_presets);
+            this.panel2.Controls.Add(this.nUD_finterval);
+            this.panel2.Controls.Add(this.frameinterval);
             this.panel2.Controls.Add(this.nUD_word);
             this.panel2.Controls.Add(this.nUD_char);
             this.panel2.Controls.Add(this.nUD_dot);
@@ -274,14 +275,15 @@
             this.panel2.Controls.Add(this.dot_pause_th);
             this.panel2.Controls.Add(this.brightness_threshold);
             this.panel2.Controls.Add(this.nUD_brightness);
+            this.panel2.Controls.Add(this.line_1);
             this.panel2.Location = new System.Drawing.Point(6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(335, 108);
+            this.panel2.Size = new System.Drawing.Size(335, 191);
             this.panel2.TabIndex = 1;
             // 
             // nUD_word
             // 
-            this.nUD_word.Location = new System.Drawing.Point(212, 83);
+            this.nUD_word.Location = new System.Drawing.Point(212, 109);
             this.nUD_word.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -299,7 +301,7 @@
             // 
             // nUD_char
             // 
-            this.nUD_char.Location = new System.Drawing.Point(212, 57);
+            this.nUD_char.Location = new System.Drawing.Point(212, 83);
             this.nUD_char.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -317,7 +319,7 @@
             // 
             // nUD_dot
             // 
-            this.nUD_dot.Location = new System.Drawing.Point(212, 31);
+            this.nUD_dot.Location = new System.Drawing.Point(212, 57);
             this.nUD_dot.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -336,7 +338,7 @@
             // word_pause_th
             // 
             this.word_pause_th.AutoSize = true;
-            this.word_pause_th.Location = new System.Drawing.Point(3, 85);
+            this.word_pause_th.Location = new System.Drawing.Point(3, 111);
             this.word_pause_th.Name = "word_pause_th";
             this.word_pause_th.Size = new System.Drawing.Size(181, 13);
             this.word_pause_th.TabIndex = 4;
@@ -345,7 +347,7 @@
             // char_pause_th
             // 
             this.char_pause_th.AutoSize = true;
-            this.char_pause_th.Location = new System.Drawing.Point(3, 59);
+            this.char_pause_th.Location = new System.Drawing.Point(3, 85);
             this.char_pause_th.Name = "char_pause_th";
             this.char_pause_th.Size = new System.Drawing.Size(177, 13);
             this.char_pause_th.TabIndex = 3;
@@ -354,7 +356,7 @@
             // dot_pause_th
             // 
             this.dot_pause_th.AutoSize = true;
-            this.dot_pause_th.Location = new System.Drawing.Point(3, 33);
+            this.dot_pause_th.Location = new System.Drawing.Point(3, 59);
             this.dot_pause_th.Name = "dot_pause_th";
             this.dot_pause_th.Size = new System.Drawing.Size(172, 13);
             this.dot_pause_th.TabIndex = 2;
@@ -363,7 +365,7 @@
             // brightness_threshold
             // 
             this.brightness_threshold.AutoSize = true;
-            this.brightness_threshold.Location = new System.Drawing.Point(3, 7);
+            this.brightness_threshold.Location = new System.Drawing.Point(3, 33);
             this.brightness_threshold.Name = "brightness_threshold";
             this.brightness_threshold.Size = new System.Drawing.Size(106, 13);
             this.brightness_threshold.TabIndex = 1;
@@ -371,7 +373,7 @@
             // 
             // nUD_brightness
             // 
-            this.nUD_brightness.Location = new System.Drawing.Point(212, 5);
+            this.nUD_brightness.Location = new System.Drawing.Point(212, 31);
             this.nUD_brightness.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -412,6 +414,100 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // nUD_finterval
+            // 
+            this.nUD_finterval.Location = new System.Drawing.Point(212, 135);
+            this.nUD_finterval.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nUD_finterval.Name = "nUD_finterval";
+            this.nUD_finterval.Size = new System.Drawing.Size(120, 20);
+            this.nUD_finterval.TabIndex = 9;
+            this.nUD_finterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nUD_finterval.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // frameinterval
+            // 
+            this.frameinterval.AutoSize = true;
+            this.frameinterval.Location = new System.Drawing.Point(3, 137);
+            this.frameinterval.Name = "frameinterval";
+            this.frameinterval.Size = new System.Drawing.Size(131, 13);
+            this.frameinterval.TabIndex = 8;
+            this.frameinterval.Text = "FrameInterval (PC Screen)";
+            // 
+            // cBox_presets
+            // 
+            this.cBox_presets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBox_presets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cBox_presets.FormattingEnabled = true;
+            this.cBox_presets.Location = new System.Drawing.Point(3, 3);
+            this.cBox_presets.Name = "cBox_presets";
+            this.cBox_presets.Size = new System.Drawing.Size(329, 21);
+            this.cBox_presets.TabIndex = 2;
+            this.cBox_presets.SelectedIndexChanged += new System.EventHandler(this.cBox_presets_SelectedIndexChanged);
+            // 
+            // btn_preset_save
+            // 
+            this.btn_preset_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_preset_save.Location = new System.Drawing.Point(6, 165);
+            this.btn_preset_save.Name = "btn_preset_save";
+            this.btn_preset_save.Size = new System.Drawing.Size(75, 23);
+            this.btn_preset_save.TabIndex = 10;
+            this.btn_preset_save.Text = "Save Preset";
+            this.btn_preset_save.UseVisualStyleBackColor = true;
+            this.btn_preset_save.Click += new System.EventHandler(this.btn_preset_save_Click);
+            // 
+            // btn_preset_saveas
+            // 
+            this.btn_preset_saveas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_preset_saveas.Location = new System.Drawing.Point(112, 165);
+            this.btn_preset_saveas.Name = "btn_preset_saveas";
+            this.btn_preset_saveas.Size = new System.Drawing.Size(96, 23);
+            this.btn_preset_saveas.TabIndex = 11;
+            this.btn_preset_saveas.Text = "Save Preset As";
+            this.btn_preset_saveas.UseVisualStyleBackColor = true;
+            this.btn_preset_saveas.Click += new System.EventHandler(this.btn_preset_saveas_Click);
+            // 
+            // btn_preset_delete
+            // 
+            this.btn_preset_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_preset_delete.Location = new System.Drawing.Point(234, 165);
+            this.btn_preset_delete.Name = "btn_preset_delete";
+            this.btn_preset_delete.Size = new System.Drawing.Size(98, 23);
+            this.btn_preset_delete.TabIndex = 12;
+            this.btn_preset_delete.Text = "Delete Preset";
+            this.btn_preset_delete.UseVisualStyleBackColor = true;
+            this.btn_preset_delete.Click += new System.EventHandler(this.btn_preset_delete_Click);
+            // 
+            // pBox_preview
+            // 
+            this.pBox_preview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBox_preview.BackColor = System.Drawing.Color.DimGray;
+            this.pBox_preview.Location = new System.Drawing.Point(5, 25);
+            this.pBox_preview.Name = "pBox_preview";
+            this.pBox_preview.Size = new System.Drawing.Size(442, 269);
+            this.pBox_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_preview.TabIndex = 1;
+            this.pBox_preview.TabStop = false;
+            this.pBox_preview.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBox_preview_MouseDown);
+            // 
+            // line_1
+            // 
+            this.line_1.AutoSize = true;
+            this.line_1.Location = new System.Drawing.Point(3, 149);
+            this.line_1.Name = "line_1";
+            this.line_1.Size = new System.Drawing.Size(331, 13);
+            this.line_1.TabIndex = 13;
+            this.line_1.Text = "______________________________________________________";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,7 +524,6 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_preview)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -441,6 +536,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUD_brightness)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUD_finterval)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_preview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,6 +574,13 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown nUD_finterval;
+        private System.Windows.Forms.Label frameinterval;
+        private System.Windows.Forms.ComboBox cBox_presets;
+        private System.Windows.Forms.Button btn_preset_delete;
+        private System.Windows.Forms.Button btn_preset_saveas;
+        private System.Windows.Forms.Button btn_preset_save;
+        private System.Windows.Forms.Label line_1;
     }
 }
 
